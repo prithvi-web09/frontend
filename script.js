@@ -62,12 +62,17 @@ window.addEventListener("load", () => {
     }, "-=0.3")
 
     let image = document.querySelector(".image img")
-    image.addEventListener("mouseenter", function(){
-        gsap.to(".image img", { scale: 0.7 })
+    image.addEventListener("click", function(){
+        gsap.from(".image img", {
+            scale:0.8,
+            opacity:0,
+            duration: 0.8,
+            delay:0.4,
+            ease:"bounce.out",
+            
+        })
     })
-    image.addEventListener("mouseleave", function(){
-        gsap.to(".image img", { scale: 1 })
-    })
+    
 })
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,5 +174,35 @@ gsap.from(".special3 p", {
     scrollTrigger: {   // lowercase "s"
         trigger: ".special3",
         start: "top 100%",   // optional but recommended
+    }
+});
+gsap.from(".tilt img",{
+    opacity:0,
+    duration: 0.8,
+    delay:0.4,
+    ease:"bounce.out",
+    scrollTrigger:{
+        trigger:".tilt img",
+        start: "top 70%",
+        
+    }
+})
+gsap.to(".vibrant-clarity",{
+    backgroundPosition: "100% 50%",
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".vibrant",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    }
+})
+gsap.to(".vibrant h2", {
+    clipPath: "inset(0 0% 0 0)",
+    duration: 1.2,
+    ease: "power3.inOut",
+    scrollTrigger: {
+        trigger: ".vibrant",
+        start: "top 90%"
     }
 });
