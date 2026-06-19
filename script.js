@@ -1,98 +1,39 @@
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// ==========================
-// Intro Animation
-// ==========================
-gsap.timeline()
-.from("#main-screen", {
-  opacity: 0,
-  duration: 1,
-  ease: "power3.out",
-})
-.from("#main-screen h1", {
-  opacity: 0,
-  duration: 0.42,
-  ease: "bounce.out",
-})
-.from("#main-screen label", {
-  opacity: 0,
-  duration: 0.2,
-  ease: "bounce.out",
-})
-.from("#main-screen input", {
-  opacity: 0,
-  duration: 0.2,
-  ease: "bounce.out",
-})
-.from("#Submit", {
-  opacity: 0,
-  duration: 0.2,
-  ease: "bounce.out",
-})
-.from("#main-screen h2", {
-  opacity: 0,
-  duration: 0.2,
-  ease: "power3.out",
-});
-
-// ==========================
-// Submit Logic
-// ==========================
-const button = document.getElementById("Submit");
-const input = document.getElementById("name-input");
-const specialMessage = document.getElementById("special-message");
-const page2 = document.getElementById("page2");
-
-button.addEventListener("click", function () {
-  const userName = input.value.trim();
-
-  // Validation
-  if (userName === "") {
-    alert("Please enter your name first!");
-    return;
-  }
-
-  // Hide main inputs
-  gsap.timeline()
-    .to("#main-screen h1", { 
-        opacity: 0, 
-        duration: 0.2 
+window.addEventListener("load", () => {
+    let tl = gsap.timeline()
+    tl.from(".nav",{
+        opacity:0, y:-60, duration:0.6, delay: 1, ease: "power3.out"
     })
-    .to("#main-screen label", { 
-        opacity: 0, 
-        duration: 0.2 
+    tl.from(".logo h1",{
+        opacity:0, x:-40, duration: 1, stagger: 0.2, ease:"power2.out"
     })
-    .to("#main-screen input", { 
-        opacity: 0, 
-        duration: 0.2 
+    tl.from(".specification h3",{
+        opacity:0, x:60, duration: 1, stagger: 0.2, ease:"power2.out"
     })
-    .to("#Submit", { 
-        opacity: 0, 
-        duration: 0.2 
+    tl.from(".buy-btn",{
+        opacity: 0, x:40, duration:0.5, ease:"power2.out"
     })
-    .to("#main-screen h2", { 
-        opacity: 0, 
-        duration: 0.2 
-    });
 
-  // Show welcome message
-  specialMessage.textContent = `Hello ${userName}, we’re glad you’re here ✨`;
+    let tm = gsap.timeline()
+    const split = new SplitType(".main h1", { types: "chars" })
 
-  gsap.to("#special-message", {
-    opacity: 1,
-    duration: 0.8,
-    y: -20,
-    ease: "power3.out",
-    onComplete: () => {
-      gsap.set(page2, { 
-        display: "block" 
-    });
+    tm.from(split.chars,{
+        opacity:0, y:80, rotateX:-90, stagger:0.05, duration:0.8, ease: "back.out(1.7)"
+    })
+    tm.from(".main button", {
+        opacity: 0, scale: 0.8, duration: 0.6, ease: "back.out(2)"
+    }, "-=0.2")
+    tm.from(".main h3", {
+        opacity: 0, y: 20, duration: 0.8, ease: "power2.out"
+    }, "-=0.3")
+    tm.from(".main h4", {
+        opacity: 0, y: 10, duration: 0.5, ease: "power1.out"
+    }, "-=0.3")
 
-      gsap.to(window, {
-        duration: 1.2,
-        scrollTo: page2,
-        ease: "power2.out"
-      });
-    }
-  });
-});
+    let image = document.querySelector(".image img")
+    image.addEventListener("mouseenter", function(){
+        gsap.to(".image img", { scale: 0.7 })
+    })
+    image.addEventListener("mouseleave", function(){
+        gsap.to(".image img", { scale: 1 })
+    })
+})
