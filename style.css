@@ -435,6 +435,30 @@ body {
     padding: 3vh 2vw;
     text-align: center;;
 }
+.feature2 i {
+    font-size: clamp(36px, 6vw, 60px);
+    transform: scaleX(0.8);
+    color: #5e5e5e;
+    padding-bottom: clamp(20px, 7vh, 60px);
+}
+
+.feature2 h3 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    color: #5e5e5e;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.feature2 h2 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    padding-top: 4px;
+    letter-spacing: 1px;
+}
+
+.feature2 h4 {
+    color: #f38d41;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
 .feature3{
     width: 100%;
     height: auto;
@@ -448,6 +472,30 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+}
+.feature3 i {
+    font-size: clamp(36px, 6vw, 60px);
+    transform: scaleX(0.8);
+    color: #5e5e5e;
+    padding-bottom: clamp(20px, 7vh, 60px);
+}
+
+.feature3 h3 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    color: #5e5e5e;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.feature3 h2 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    padding-top: 4px;
+    letter-spacing: 1px;
+}
+
+.feature3 h4 {
+    color: #f38d41;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 .feature4{
     width: 100%;
@@ -463,6 +511,30 @@ body {
     padding: 3vh 2vw;
     text-align: center;
 }
+.feature4 i {
+    font-size: clamp(36px, 6vw, 60px);
+    transform: scaleX(0.8);
+    color: #5e5e5e;
+    padding-bottom: clamp(20px, 7vh, 60px);
+}
+
+.feature4 h3 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    color: #5e5e5e;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.feature4 h2 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    padding-top: 4px;
+    letter-spacing: 1px;
+}
+
+.feature4 h4 {
+    color: #f38d41;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
 .feature5{
   width: 100%;
     height: auto;
@@ -477,6 +549,30 @@ body {
     padding: 3vh 2vw;
     text-align: center;
 }
+.feature5 i {
+    font-size: clamp(36px, 6vw, 60px);
+    transform: scaleX(0.8);
+    color: #5e5e5e;
+    padding-bottom: clamp(20px, 7vh, 60px);
+}
+
+.feature5 h3 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    color: #5e5e5e;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.feature5 h2 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    padding-top: 4px;
+    letter-spacing: 1px;
+}
+
+.feature5 h4 {
+    color: #f38d41;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
 .feature6{
     width: 100%;
     height: auto;
@@ -490,4 +586,184 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+}
+.feature6 i {
+    font-size: clamp(36px, 6vw, 60px);
+    transform: scaleX(0.8);
+    color: #5e5e5e;
+    padding-bottom: clamp(20px, 7vh, 60px);
+}
+
+.feature6 h3 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    color: #5e5e5e;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.feature6 h2 {
+    font-size: clamp(0.9rem, 2vw, 20px);
+    padding-top: 4px;
+    letter-spacing: 1px;
+}
+
+.feature6 h4 {
+    color: #f38d41;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+#page6 {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    text-align: center;
+}
+
+#page6 img {
+    height: auto;
+    width: clamp(200px, 40vw, 500px);
+}
+
+#page6 h1 {
+    font-size: clamp(1.8rem, 6vw, 60px);
+    padding-top: 3vh;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+#page6 p {
+    font-size: clamp(0.9rem, 2.2vw, 23px);
+    text-align: center;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    font-weight: 200;
+    color: #949799;
+}
+
+@media (max-width: 600px) {
+    #page6 p br {
+        display: none;
+    }
+}
+
+#page6 button {
+    width: min(60%, 400px);
+    height: clamp(50px, 8vh, 80px);
+    background-color: white;
+    margin-top: clamp(20px, 10vh, 80px);
+    border-radius: 50px;
+    font-size: clamp(0.9rem, 1.8vw, 25px);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+#page6 button:hover {
+    background-color: black;
+    color: white;
+    transition: all ease 1s;
+}
+
+#page6 .find {
+    width: min(60%, 400px);
+    height: clamp(50px, 8vh, 80px);
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: clamp(15px, 5vh, 40px);
+    border-radius: 50px;
+    font-size: clamp(0.9rem, 1.8vw, 25px);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+#page6 .find:hover {
+    background-color: #f38d41;
+    color: white;
+    transition: all ease 1s;
+}
+
+/* ── PAGE 7 (Footer links) ── */
+#page7 {
+    min-height: auto;
+    width: 100vw;
+    background-color: #121212;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vh 5vw;
+    padding: 8vh 5vw;
+    margin-top: clamp(40px, 20vh, 200px);
+}
+
+.shop, .service, .account, .values {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.shop h2, .service h2, .account h2, .values h2 {
+    padding-top: 0;
+    padding-left: 0;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.shop h5, .service h5, .account h5, .values h5 {
+    padding-top: clamp(20px, 4vh, 40px);
+    padding-left: 0;
+    letter-spacing: 1px;
+    color: #6a8189;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    cursor: pointer;
+}
+
+.shop h5:hover, .service h5:hover,
+.account h5:hover, .values h5:hover {
+    color: #f38d41;
+}
+
+@media (max-width: 600px) {
+    #page7 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── PAGE 8 (Bottom bar) ── */
+#page8 {
+    height: auto;
+    min-height: 30vh;
+    width: 100vw;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    color: #868686;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    text-align: center;
+}
+
+#page8 p {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.policy {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5vh;
+    gap: 4vw;
+}
+
+.policy h6 {
+    font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+    cursor: pointer;
+    white-space: nowrap;
 }
