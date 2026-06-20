@@ -206,3 +206,64 @@ gsap.to(".vibrant h2", {
         start: "top 90%"
     }
 });
+const track = document.querySelector(".carousel-track");
+
+// Carousel always moves — works on every device
+let tween = gsap.to(track, {
+    xPercent: -50,
+    repeat: -1,
+    duration: 25,
+    ease: "linear"
+});
+
+
+if (window.matchMedia("(hover: hover)").matches) {
+    const images = document.querySelectorAll(".carousel-track img");
+
+    images.forEach((img) => {
+        img.addEventListener("mouseenter", () => {
+            gsap.to(img, { scale: 1.08, duration: 0.4, ease: "power2.out" });
+            tween.timeScale(0.15);
+        });
+
+        img.addEventListener("mouseleave", () => {
+            gsap.to(img, { scale: 1, duration: 0.4, ease: "power2.out" });
+            tween.timeScale(1);
+        });
+    });
+}
+
+// Scroll-velocity speed boost — works everywhere (scroll exists on mobile too)
+ScrollTrigger.create({
+    trigger: ".image",
+    start: "top bottom",
+    end: "bottom top",
+    onUpdate: (self) => {
+        const velocity = self.getVelocity();
+        const speedFactor = gsap.utils.clamp(0.5, 3, 1 + Math.abs(velocity) / 2000);
+        tween.timeScale(speedFactor);
+    }
+});
+const featureCards = document.querySelectorAll(
+    ".feature1, .feature2, .feature3, .feature4, .feature5, .feature6"
+);
+
+featureCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+    });
+});
+gsap.from("#page6 img",{
+    opacity:0,
+    duration:1.5,
+    ease:"bounce.out",
+    scrollTrigger:{
+        trigger:"#page6 img",
+        start:"top bottom",
+        end:"bottom top"
+    }
+})
