@@ -114,27 +114,53 @@ body {
     color: #f38d41;
     font-size: clamp(0.7rem, 1.2vw, 1rem);
 }
-.image{
-    height:80vh;
+.image {
+    height: clamp(300px, 80vh, 700px);
     width: 100vw;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    position: relative;
 }
-.image img {
-    width: 100%;
-    height: clamp(200px, 70vh, 800px);
+
+.image::before,
+.image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: clamp(20px, 10vw, 120px);
+    z-index: 2;
+    pointer-events: none;
+}
+.image::before {
+    left: 0;
+    background: linear-gradient(to right, #0b0b0b, transparent);
+}
+.image::after {
+    right: 0;
+    background: linear-gradient(to left, #0b0b0b, transparent);
+}
+
+.carousel-track {
+    display: flex;
+    gap: clamp(12px, 3vw, 30px);
+    will-change: transform;
+}
+
+.carousel-track img {
+    height: clamp(180px, 55vh, 500px);
+    width: auto;
     object-fit: cover;
-    object-position: center; /* adjust this if cropping looks bad */
-    display: block;
+    border-radius: clamp(12px, 2vw, 24px);
+    flex-shrink: 0;
+    filter: brightness(0.85);
+    transition: filter 0.4s ease;
+    cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .image img {
-        height: auto;
-        object-fit: contain;
-    }
+.carousel-track img:hover {
+    filter: brightness(1.1);
 }
 #page2{
     min-height: 100vh;
@@ -390,6 +416,9 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 .feature1 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -433,7 +462,10 @@ body {
     border-radius: 30px;
     margin: 0;
     padding: 3vh 2vw;
-    text-align: center;;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 .feature2 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -472,6 +504,9 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 .feature3 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -510,6 +545,10 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
 }
 .feature4 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -548,6 +587,9 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 .feature5 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -586,6 +628,9 @@ body {
     margin: 0;
     padding: 3vh 2vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 .feature6 i {
     font-size: clamp(36px, 6vw, 60px);
@@ -611,6 +656,29 @@ body {
     color: #f38d41;
     font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
+.feature1:hover, .feature2:hover, .feature3:hover,
+.feature4:hover, .feature5:hover, .feature6:hover {
+    transform: scale(1.02);
+}
+.feature1::before, .feature2::before, .feature3::before,
+.feature4::before, .feature5::before, .feature6::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #f38d4125, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.feature1:hover::before, .feature2:hover::before, .feature3:hover::before,
+.feature4:hover::before, .feature5:hover::before, .feature6:hover::before {
+    opacity: 1;
+}
+
 #page6 {
     min-height: 100vh;
     width: 100vw;
